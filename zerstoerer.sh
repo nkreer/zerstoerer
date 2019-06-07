@@ -9,5 +9,9 @@ ffmpeg -i segments/rezo.mp4 -i tmp.wav -shortest -vcodec copy -acodec aac -ac 2 
 # Concatenate everything back together
 ffmpeg -f concat -i order.txt -vcodec copy output.mp4 -y
 
+# Clean up
+rm tmp.wav
+rm custom.mp4
+
 # Play back
 mpv output.mp4
